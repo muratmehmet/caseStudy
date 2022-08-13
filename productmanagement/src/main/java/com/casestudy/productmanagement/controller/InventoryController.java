@@ -22,6 +22,5 @@ public class InventoryController {
     public void save(@RequestBody InventoryDto inventoryDto){
         log.info("product saving process begin {}", inventoryDto);
         inventoryService.save(inventoryDto);
-
     }
 }

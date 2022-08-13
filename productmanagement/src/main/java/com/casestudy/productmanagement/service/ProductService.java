@@ -2,22 +2,20 @@ package com.casestudy.productmanagement.service;
 
 
 import com.casestudy.productmanagement.converter.ProductConverter;
-import com.casestudy.productmanagement.domain.Inventory;
 import com.casestudy.productmanagement.domain.Product;
 import com.casestudy.productmanagement.dto.ProductDto;
 import com.casestudy.productmanagement.exception.NotFoundException;
 import com.casestudy.productmanagement.repository.ProductRepository;
-import com.ctc.wstx.util.StringUtil;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
-
+@Slf4j
 @Service
 @AllArgsConstructor
 public class ProductService {
@@ -27,7 +25,9 @@ public class ProductService {
 
 
     public void save(ProductDto productDto) {
+
         productRepository.save(productConverter.toEntity(productDto));
+        log.info("product successfully saved {}", productDto);
     }
 
     public List<Product> findAll() {
@@ -84,5 +84,10 @@ public class ProductService {
         }else {
             throw new NotFoundException("Product not found !");
         }
+    }
+
+    public void deleteById(Long id){
+        productRepository.deleteById(id);
+        log.info("{} product successfuly deleted ! ", id);
     }
 }

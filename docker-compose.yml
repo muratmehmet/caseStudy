@@ -28,16 +28,6 @@ services:
     networks:
       - postgres
     restart: unless-stopped
-  customer:
-    image: amigoscode/customer:latest
-    container_name: customer
-    ports:
-      - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
 networks:
   postgres:
     driver: bridge

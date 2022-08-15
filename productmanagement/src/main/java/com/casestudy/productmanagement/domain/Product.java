@@ -25,9 +25,8 @@ import java.math.BigDecimal;
 public class Product extends BaseEntity {
 
     private Long productId;
-    private String status;
-    private Long quantity;
     private String name;
+    private Long quantity;
     private BigDecimal price;
     @Lob
     private String description;

@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 public class ProductDto extends BaseDto {
 
     private Long productId;
-    private String status;
     private Long quantity;
     private String name;
     private String description;

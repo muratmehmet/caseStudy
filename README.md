@@ -2,7 +2,7 @@
 Case assessment
 
 
-For dev profile in your local environmen, you can use postrgesql.
+For dev profile in your local environment, you can use postgresql.
 You need to have docker on your local
 open the terminal in caseStudy directory
 docker compose up -d

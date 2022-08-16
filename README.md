@@ -6,7 +6,7 @@ Case assessment
 -- You need to have docker on your local
 -- open the terminal in caseStudy directory
 -- docker compose up -d
--- http://localhost:5050/browser/
+-- pgadmin http://localhost:5050/browser/
 
 
 -- For test cases you can use h2
